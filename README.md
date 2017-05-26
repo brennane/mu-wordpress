@@ -141,13 +141,35 @@ You'll see a table like this:
 
 You can view the details on any of the environments:
 
-    mu env show dev
+    mu env show test
 
-If you want to watch the "dev" environment's services get deployed, or view
-logs from the "dev" environment, try these:
+If you want to watch the "test" environment's services get deployed, or view
+logs from the "test" environment, try these:
 
-    mu service logs -f dev
-    mu env logs -f dev
+    mu service logs -f test
+    mu env logs -f test
+
+### Initialize WordPress
+
+When your test environment is initialized, you can load the WordPress
+admin installer and get your site started. Find the base URL with:
+
+    mu env show test
+
+You'll see a block at the top that includes "Base URL":
+
+    Environment:    test
+    Cluster Stack:  mu-cluster-test (UPDATE_IN_PROGRESS)
+    VPC Stack:      mu-vpc-test (UPDATE_COMPLETE)
+    Bastion Host:   1.2.3.4
+    Base URL:       http://mu-cl-some-long-uuid.us-west-2.elb.amazonaws.com
+
+Append "/wp-admin" to that and load the URL in your browser:
+
+    http://mu-cl-some-long-uuid.us-west-2.elb.amazonaws.com/wp-admin
+
+Follow the instructions there to set up a WordPress admin user,
+initialize the database, etc.
 
 
 ## FAQ
