@@ -20,14 +20,12 @@ environments:
     # desiredCapacity: 1
     #### - Max size when scaling up the ECS ASG
     #### (default: 2)
-    # maxSize: 2
+    # maxSize: 1
 
 - name: prod
   cluster:
     keyName: mu-wordpress
     instanceType: t2.micro
-    # desiredCapacity: 1
-    # maxSize: 2
 
 ## See https://github.com/stelligent/mu/wiki/Services
 service:
