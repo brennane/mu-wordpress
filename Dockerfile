@@ -5,6 +5,3 @@ RUN echo "include_once( dirname( __FILE__ ) . '/wp-config-local.php' );" >> /usr
 
 # Copy files from our local html directory to the WordPress html dir
 COPY html /usr/src/wordpress/
-
-# example of a theme we could copy in.
-# COPY html/themes/mytheme /usr/src/wordpress/wp-content/themes/mytheme
