@@ -15,13 +15,6 @@ environments:
     #### (default: t2.micro)
     instanceType: t2.micro
 
-    #### - Desired number of ECS container instances
-    #### (default 1)
-    # desiredCapacity: 1
-    #### - Max size when scaling up the ECS ASG
-    #### (default: 2)
-    # maxSize: 1
-
 - name: prod
   cluster:
     keyName: mu-wordpress

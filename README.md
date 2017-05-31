@@ -124,7 +124,8 @@ Watch your pipeline get deployed:
 
 ### Inspect
 
-When that's done, you can verify that you have environments, "test" and "prod":
+When that's done, you can verify that you have 2 environments, "test" and
+"prod":
     
     mu env list
 
@@ -136,8 +137,6 @@ You'll see a table like this:
     | test        | mu-cluster-test       | CREATE_COMPLETE     | 2017-05-23 14:48:04 | 0.1.13     |
     | prod        | mu-cluster-prod       | CREATE_COMPLETE     | 2017-05-23 16:23:28 | 0.1.13     |
     +-------------+-----------------------+---------------------+---------------------+------------+
-
-"test" is the environment that is managed in CodePipeline. "prod" is the environment
 
 You can view the details on any of the environments:
 
@@ -170,6 +169,21 @@ Append "/wp-admin" to that and load the URL in your browser:
 
 Follow the instructions there to set up a WordPress admin user,
 initialize the database, etc.
+
+
+### Update your content
+
+Everything in your repo's `html` directory will be installed in your
+containers. Add files there and they'll end up in `/var/www/html`,
+right alongside WordPress. Want to install persistent plugins?
+Put them in `html/wp-content/plugins`. Want to install a theme?
+Add it to `html/wp-content/themes`.
+
+### Caveat
+
+This is a really simple proof-of-concept for deploying and managing a
+WordPress installation through code. Making it robust is more complex,
+and not within the scope of the basic presentation here.
 
 
 ## FAQ

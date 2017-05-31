@@ -1,12 +1,10 @@
-FROM wordpress
+FROM wordpress:latest
 
 # Give us a simple way to add our own settings to the WordPress config
-RUN set -x \
-    && echo "include( dirname( __FILE__ ) . '/wp-config-local.php' );" >> /var/www/html/wp-config.php \
-    && tail -20 /var/www/html/wp-config.php
-#RUN echo ----
+RUN echo "include_once( dirname( __FILE__ ) . '/wp-config-local.php' );" >> /usr/src/wordpress/wp-config-sample.php
 
 # Copy files from our local html directory to the WordPress html dir
-#RUN echo Installing local "html" content
-COPY html /var/www/html/
-#RUN echo ----
+COPY html /usr/src/wordpress/
+
+# example of a theme we could copy in.
+# COPY html/themes/mytheme /usr/src/wordpress/wp-content/themes/mytheme
